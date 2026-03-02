@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent 交互式對話</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="chat-header">
+            <h1>🤖 AI Agent 助理</h1>
+            <p class="subtitle">與 AI 助理進行對話 | 支持多語言 🌐 圖片分析 🖼️</p>
+        </header>
+
+        <div class="chat-box">
+            <div id="messages" class="messages">
+                <div class="message bot-message">
+                    <strong>AI 助理：</strong>
+                    <p>你好！我是你的 AI 助理。有什麼我可以幫助你的嗎？你可以：</p>
+                    <ul style="margin: 8px 0 0 20px; font-size: 13px;">
+                        <li>用任何語言與我聊天（自動檢測）</li>
+                        <li>上傳圖片讓我分析內容</li>
+                        <li>問我「現在幾點」查詢時間</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="imagePreview" class="image-preview" style="display: none;">
+                <div class="preview-container">
+                    <img id="previewImg" src="" alt="圖片預覽">
+                    <button id="removeImageBtn" class="remove-image-btn" title="移除圖片">✕</button>
+                </div>
+                <p class="preview-label">圖片已選擇，點擊發送按鈕上傳</p>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="messageInput" class="message-input" placeholder="輸入你的訊息..." autocomplete="off">
+                <button class="image-upload-btn" id="imageUploadBtn" title="上傳圖片">
+                    📷
+                </button>
+                <input type="file" id="imageInput" class="image-input" accept="image/*" style="display: none;">
+                <button id="sendBtn" class="send-btn">發送 📤</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>由 .NET 10 AI Agent 框架提供 | Session: <span id="sessionId"></span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

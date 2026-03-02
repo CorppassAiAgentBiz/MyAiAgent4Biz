@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Tests (All)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "dotnet",
+      "args": [
+        "test",
+        "AiAgent.Tests/AiAgent.Tests.csproj",
+        "-c",
+        "Debug",
+        "--no-build"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    },
+    {
+      "name": ".NET Tests (Filter)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "dotnet",
+      "args": [
+        "test",
+        "AiAgent.Tests/AiAgent.Tests.csproj",
+        "-c",
+        "Debug",
+        "--no-build",
+        "--filter",
+        "${input:testFilter}"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    }
+  ],
+  "inputs": [
+    {
+      "id": "testFilter",
+      "type": "promptString",
+      "description": "VSTest filter expression (e.g., FullyQualifiedName~AgentPipelineTests)"
+    }
+  ]
+}
